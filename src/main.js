@@ -3,7 +3,8 @@ import App from './App.vue'
 import router from './router'
 import './plugin/element'
 import './plugin/vant'
-import './utils/rem';
+import 'amfe-flexible/index'
+// import './utils/rem';
 
 Vue.config.productionTip = false
 

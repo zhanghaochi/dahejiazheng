@@ -3,9 +3,9 @@
     <div class="test">
       <p class="hello">Hello</p>
     </div>
-    <div class="test1">
+    <!-- <div class="test1">
       <p class="hello1">Hello</p>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -20,14 +20,13 @@ export default {};
   background-color: bisque;
   text-align: center；;
 }
-.test1 {
+/* .test1 {
   width: 20rem;
   height: 10rem;
   background-color: rgb(199, 125, 35);
   text-align: center；;
-}
+} */
 .hello {
-  font-size: 1rem;
   color: red;
 }
 </style>
