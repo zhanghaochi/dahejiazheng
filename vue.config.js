@@ -1,18 +1,23 @@
+const autoprefixer = require('autoprefixer');
+const pxtorem = require('postcss-pxtorem');
+
 module.exports = {
-  lintOnSave: true,
+  // lintOnSave: true,
+  // outputDir: 'docs',
+  // publicPath: process.env.NODE_ENV === 'production' ? '/vant-demo/' : '/',
   css: {
     loaderOptions: {
       postcss: {
         plugins: [
-          require('autoprefixer')({
+          autoprefixer({
             browsers: ['Android >= 4.0', 'iOS >= 7']
           }),
-          require('postcss-pxtorem')({
-            rootValue: 37.5, // 换算的基数
-            propList: ['*'],
-          }),
+          pxtorem({
+            rootValue: 37.5,
+            propList: ['*']
+          })
         ]
       }
     }
   }
-}
+};
