@@ -1,6 +1,11 @@
 <template>
   <div class="app-container">
     <van-row>
+      <van-col span="24" class="titlebar">
+        <img src="@/assets/zhaopin.jpg" width="100%">
+      </van-col>
+    </van-row>
+    <van-row>
       <van-col span="24">
         <van-button size="large" type="primary" to="/job">加入我们</van-button>
       </van-col>
@@ -18,14 +23,15 @@ export default {};
 </script>
 
 <style scoped>
-.app-container{
-  padding-top: 20%;
+.app-container {
   width: 100%;
-  line-height: 180px;
 }
-.van-button{
+.van-button {
   width: 80%;
   height: 100px;
-  font-size: 50px
+  font-size: 50px;
+}
+.titlebar{
+  font-size: 0;
 }
 </style>
