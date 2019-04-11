@@ -3,11 +3,11 @@
     <div class="box1">
       <img src="@/assets/jiameng.jpg" width="100%">
       <div>
-        <p class="header">加盟合作</p>
+        <p class="header">加盟</p>
       </div>
       <van-cell-group style="width:90%;margin-left:5%;background-color:rgba(0,0,0,0)">
         <van-field
-          v-model="username"
+          v-model="mydata.name"
           size="large"
           required
           clearable
@@ -16,7 +16,7 @@
         />
         <van-field
           size="large"
-          v-model="phone"
+          v-model="mydata.phone"
           type="tel"
           label="电话:"
           placeholder="请输入电话号码"
@@ -24,38 +24,82 @@
           required
         />
         <van-field
+          v-model="mydata.companycard"
           size="large"
-          v-model="password"
-          type="number"
-          label="身份证:"
-          placeholder="请输入身份"
+          label="营业执照名称:"
+          placeholder="请输入营业执照名称"
           clearable
           required
         />
-        <van-cell title="性别:" size="large" required title-class="sexclass">
-          <van-radio-group v-model="radio">
-            <van-radio name="1">男</van-radio>
-            <van-radio name="2">女</van-radio>
-          </van-radio-group>
-        </van-cell>
+        <van-cell title="加盟类别:" size="large" required title-class="kindclass"></van-cell>
+        <van-radio-group v-model="mydata.item" class="job-radio-group">
+          <van-cell clickable @click="mydata.item = '家电清洗'">
+            <van-radio checked-color="#07c160" name="家电清洗">家电清洗</van-radio>
+          </van-cell>
+          <van-cell clickable @click="mydata.item = '家电维修'">
+            <van-radio checked-color="#07c160" name="家电维修">家电维修</van-radio>
+          </van-cell>
+          <van-cell clickable @click="mydata.item = '保洁服务'">
+            <van-radio checked-color="#07c160" name="保洁服务">保洁服务</van-radio>
+          </van-cell>
+          <van-cell clickable @click="mydata.item = '保姆护工'">
+            <van-radio checked-color="#07c160" name="保姆护工">保姆护工</van-radio>
+          </van-cell>
+          <van-cell clickable @click="mydata.item = '水电维修'">
+            <van-radio checked-color="#07c160" name="水电维修">水电维修</van-radio>
+          </van-cell>
+          <van-cell clickable @click="mydata.item = '家居环保'">
+            <van-radio checked-color="#07c160" name="家居环保">家居环保</van-radio>
+          </van-cell>
+        </van-radio-group>
+        <van-dialog v-model="show" title="加盟须知" confirmButtonText="我已阅读" @confirm="handler">
+          <p>asdasd啊实打实的按时按点按时啊是大啊是大啊是大撒旦啊是大啊是大撒旦啊是大啊是大按时大苏打啊是大按时的撒旦啊是大按时打算打算的撒大撒大苏打盛大的，按时打算。啊是大艾萨拉历史地理了啊是大啊实打实 啊撒 按时</p>
+        </van-dialog>
       </van-cell-group>
-      <van-field
-        size="large"
-        v-model="password"
-        type="number"
-        label="培训专业:"
-        placeholder="点击选择"
-        clearable
-        required
-      />
-      <van-button type="warning">我要培训</van-button>
+      <van-button type="warning" @click="submit">我要加盟</van-button>
     </div>
     <p class="myad">"安阳悦享工作室"提供技术支持</p>
   </div>
 </template>
 
 <script>
-export default {};
+import { constants } from "crypto";
+export default {
+  data() {
+    return {
+      mydata: {
+        name: undefined,
+        phone: undefined,
+        companycard: undefined,
+        item: undefined
+      },
+      show: false
+    };
+  },
+  methods: {
+    submit() {
+      if (
+        !this.mydata.name ||
+        !this.mydata.phone ||
+        !this.mydata.companycard ||
+        !this.mydata.item
+      ) {
+        this.$dialog
+          .alert({
+            message: "请填写完整！"
+          })
+          .then(() => {
+            // on close
+          });
+      } else {
+        this.show = true;
+      }
+    },
+    handler() {
+      console.log(22222);
+    }
+  }
+};
 </script>
 
 <style scoped>
@@ -80,28 +124,41 @@ export default {};
   margin-left: auto;
   padding-bottom: 30px;
 }
+.van-field {
+  margin-bottom: 20px;
+}
 .header {
   line-height: 0;
 }
 .sexclass {
   flex: 0.5;
 }
-.van-radio-group {
+.sex-cell {
+  margin-bottom: 20px;
+}
+.sex-radio-group {
   width: 100%;
   float: left;
   display: flex;
 }
-.van-radio {
+.sex-radio {
   flex: 1;
   text-align: left;
 }
-
 .van-button {
+  margin-top: 20px;
   width: 80%;
   font-size: 0.5em;
+}
+.kindclass {
+  text-align: left;
+  padding-left: 5%;
 }
 .myad {
   color: #fff;
   font-size: 0.3em;
+}
+.job-radio-group > .van-cell {
+  padding-left: 40px;
 }
 </style>
