@@ -31,6 +31,11 @@ export default new Router({
       component: () => import('@/views/job')
     },
     {
+      path: '/peixun',
+      name: 'peixun',
+      component: () => import('@/views/peixun')
+    },
+    {
       path: '/field',
       name: 'field',
       component: () => import('@/views/field')

@@ -2,17 +2,22 @@
   <div class="app-container">
     <van-row>
       <van-col span="24" class="titlebar">
-        <img src="@/assets/zhaopin.jpg" width="100%">
+        <img src="@/assets/banner.jpg" width="100%">
       </van-col>
     </van-row>
     <van-row>
       <van-col span="24">
-        <van-button size="large" type="primary" to="/job">加入我们</van-button>
+        <van-button size="large" type="danger" to="/job">我要应聘</van-button>
       </van-col>
     </van-row>
     <van-row>
       <van-col span="24">
-        <van-button size="large" type="danger" to="/join">加盟我们</van-button>
+        <van-button size="large" type="warning" to="/peixun">我要培训</van-button>
+      </van-col>
+    </van-row>
+    <van-row>
+      <van-col span="24">
+        <van-button size="large" type="primary" to="/join">我要加盟</van-button>
       </van-col>
     </van-row>
   </div>
@@ -31,7 +36,7 @@ export default {};
   height: 100px;
   font-size: 50px;
 }
-.titlebar{
+.titlebar {
   font-size: 0;
 }
 </style>

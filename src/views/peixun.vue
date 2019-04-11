@@ -1,13 +1,13 @@
 <template>
   <div class="app-container">
     <div class="box1">
-      <img src="@/assets/zhaopin.jpg" width="100%">
+      <img src="@/assets/peixun.jpg" width="100%">
       <div>
-        <p class="header">招聘</p>
+        <p class="header">技术培训</p>
       </div>
       <van-cell-group style="width:90%;margin-left:5%;background-color:rgba(0,0,0,0)">
         <van-field
-          v-model="name"
+          v-model="username"
           size="large"
           required
           clearable
@@ -24,7 +24,8 @@
           required
         />
         <van-field
-          v-model="idcard"
+          size="large"
+          v-model="password"
           type="number"
           label="身份证:"
           placeholder="请输入身份"
@@ -32,12 +33,12 @@
           required
         />
         <van-cell title="性别:" size="large" required title-class="sexclass">
-          <van-radio-group v-model="sex" class="sex-radio-group">
-            <van-radio class="sex-radio" name="男">男</van-radio>
-            <van-radio class="sex-radio" name="女">女</van-radio>
+          <van-radio-group v-model="radio">
+            <van-radio name="1">男</van-radio>
+            <van-radio name="2">女</van-radio>
           </van-radio-group>
         </van-cell>
-        <!-- <van-field
+        <van-field
           size="large"
           v-model="password"
           type="number"
@@ -45,39 +46,16 @@
           placeholder="点击选择"
           clearable
           required
-        />-->
-        <van-cell  title="应聘类型:" size="large"  required title-class="peixunclass"></van-cell>
-          <van-radio-group v-model="jobscopes" class="job-radio-group">
-            <van-cell>
-              <van-radio name="家电清洗">家电清洗</van-radio>
-            </van-cell>
-            <van-cell>
-              <van-radio name="家电维修">家电维修</van-radio>
-            </van-cell>
-            <van-cell>
-              <van-radio name="保洁服务">保洁服务</van-radio>
-            </van-cell>
-            <van-cell>
-              <van-radio name="保姆护工">保姆护工</van-radio>
-            </van-cell>
-            <van-cell>
-              <van-radio name="水电维修">水电维修</van-radio>
-            </van-cell>
-            <van-cell>
-              <van-radio name="jjhb">家居环保</van-radio>
-            </van-cell>
-          </van-radio-group>
-        
+        />
       </van-cell-group>
-      <van-button type="warning">我要应聘</van-button>
+      <van-button type="warning">我要加盟</van-button>
     </div>
     <p class="myad">"安阳悦享工作室"提供技术支持</p>
   </div>
 </template>
 
 <script>
-export default {
-};
+export default {};
 </script>
 
 <style scoped>
@@ -108,12 +86,12 @@ export default {
 .sexclass {
   flex: 0.5;
 }
-.sex-radio-group {
+.van-radio-group {
   width: 100%;
   float: left;
   display: flex;
 }
-.sex-radio {
+.van-radio {
   flex: 1;
   text-align: left;
 }
@@ -122,14 +100,8 @@ export default {
   width: 80%;
   font-size: 0.5em;
 }
-.peixunclass{
-  text-align: left;
-  padding-left: 5%;
-}
 .myad {
   color: #fff;
   font-size: 0.3em;
-}
-.job-radio-group{
 }
 </style>
