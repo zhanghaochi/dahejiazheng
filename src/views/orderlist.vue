@@ -1,22 +1,29 @@
 <template>
   <div>
-    <van-list v-model="loading" :finished="finished" finished-text="没有更多了" @load="onLoad">
+    <van-list
+      :immediate-check="false"
+      v-model="loading"
+      :finished="finished"
+      finished-text="没有更多了"
+      @load="onLoad"
+    >
       <van-cell
         v-for="item in listdata"
-        :key="item"
+        :key="item.order_id"
         :title="item.user.wx_nickName+'的订单'"
         :value="item.kind.kind_name"
         size="large"
         :label="item.address"
-        clickable
-        @click="www.baidu.com"
+        :to="{ name: 'detail', query: { id:item.order_id}}"
       />
+      <!-- <van-cell v-for="item in listdata" :key="item" :title="item"/> -->
     </van-list>
   </div>
 </template>
 
 <script>
 import { getlist } from "@/api/dingdan";
+import { constants } from "crypto";
 export default {
   data() {
     return {
@@ -38,25 +45,23 @@ export default {
       getlist(this.listquery)
         .then(response => {
           this.maxnum = response.data.maxNum;
-          this.listdata = response.data.data;
-          console.log(response.data);
+          this.listdata = this.listdata.concat(response.data.data);
         })
         .catch(err => {
           console.log(err);
         });
     },
     onLoad() {
-      // 异步更新数据
-      setTimeout(() => {
-        this.listquery = this.listquery + 1;
-        // 加载状态结束
-        this.loading = false;
-        this.getorderlist();
-        // 数据全部加载完成
-        if (this.listdata.length >= this.maxnum) {
-          this.finished = true;
-        }
-      }, 500);
+      this.listquery.page++;
+      getlist(this.listquery)
+        .then(response => {
+          this.listdata = this.listdata.concat(response.data.data);
+          this.loading = false;
+        })
+        .catch(err => {});
+      if (this.listdata.length >= this.maxnum) {
+        this.finished = true;
+      }
     }
   }
 };

@@ -6,12 +6,28 @@
       <van-cell title="下单时间" :value="detaildata.order_time" title-class="kindclass" size="large"/>
       <van-cell title="地址" :value="detaildata.address" title-class="kindclass" size="large"/>
       <van-cell title="姓名" :value="detaildata.addressee" title-class="kindclass" size="large"/>
-      <van-cell title="电话" :value="detaildata.addressee_phone" title-class="kindclass" size="large"/>
-      <van-cell title="服务种类" :value="detaildata.kind.kind_name" title-class="kindclass" size="large"/>
-      <van-cell title="预约时间" :value="detaildata.appointment_time" title-class="kindclass" size="large"/>
+      <van-cell
+        title="电话"
+        :value="detaildata.addressee_phone"
+        title-class="kindclass"
+        size="large"
+      ><a :href="'tel:' + detaildata.addressee_phone">{{detaildata.addressee_phone}}</a>
+      </van-cell>
+      <van-cell
+        title="服务种类"
+        :value="detaildata.kind.kind_name"
+        title-class="kindclass"
+        size="large"
+      />
+      <van-cell
+        title="预约时间"
+        :value="detaildata.appointment_time"
+        title-class="kindclass"
+        size="large"
+      />
       <van-cell title="实付金额" :value="detaildata.real_price" title-class="kindclass" size="large"/>
     </van-cell-group>
-    <van-button type="info" to="/orderlist" >查看其他订单</van-button>
+    <van-button type="info" to="/orderlist">查看其他订单</van-button>
   </div>
 </template>
 
@@ -21,24 +37,17 @@ export default {
   data() {
     return {
       detaildata: {},
-      id:''
     };
   },
   mounted() {
-    console.log(this.$route)
-    if(this.$route.query.id){
-      this.id=this.$route.query.id
-      this.ddd();
-    }else{
-      this.id=this.$route.params.myid
-      this.ddd();
-    }
+    this.ddd();
   },
   methods: {
     ddd() {
-      getdetail(this.id)
+      // console.log(this.$route.query.id);
+      getdetail(this.$route.query.id)
         .then(response => {
-          console.log(response.data.data)
+          console.log(response.data.data);
           this.detaildata = response.data.data;
         })
         .catch(err => {
@@ -50,10 +59,12 @@ export default {
 </script>
 
 <style scoped>
-p{
-  margin: 0,10px,0,0;
+p {
+  margin-top: 10px;
+  margin-bottom: 10px;
   padding: 0;
-  font-size:0.8em;
+  font-size: 0.6em;
+  font-weight:bold;
 }
 .kindclass {
   text-align: left;
