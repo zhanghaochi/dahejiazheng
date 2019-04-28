@@ -52,18 +52,19 @@
             <van-radio checked-color="#07c160" name="家居环保">家居环保</van-radio>
           </van-cell>
         </van-radio-group>
-        <van-dialog v-model="show" title="加盟须知" confirmButtonText="我已阅读" @confirm="handler">
-          <p>asdasd啊实打实的按时按点按时啊是大啊是大啊是大撒旦啊是大啊是大撒旦啊是大啊是大按时大苏打啊是大按时的撒旦啊是大按时打算打算的撒大撒大苏打盛大的，按时打算。啊是大艾萨拉历史地理了啊是大啊实打实 啊撒 按时</p>
+        <van-dialog v-model="show" title="加盟政策" confirmButtonText="我已阅读" @confirm="handler">
+          <p>暂无</p>
         </van-dialog>
       </van-cell-group>
       <van-button type="warning" @click="submit">我要加盟</van-button>
     </div>
-    <p class="myad">"安阳悦享工作室"提供技术支持</p>
+    <!-- <p class="myad">"安阳悦享工作室"提供技术支持</p> -->
   </div>
 </template>
 
 <script>
-import { constants } from "crypto";
+import { sendjoin } from "@/api/send";
+
 export default {
   data() {
     return {
@@ -96,7 +97,27 @@ export default {
       }
     },
     handler() {
-      console.log(22222);
+      sendjoin(this.mydata)
+        .then(response => {
+          if (response.data.code == 200) {
+              this.$dialog
+                .alert({
+                  message: "提交成功"
+                })
+                .then(() => {
+                  this.$router.push("/");
+                });
+          } else {
+            this.$dialog.alert({
+              message: "提交失败"
+            });
+          }
+        })
+        .catch(err => {
+          this.$dialog.alert({
+            message: err
+          });
+        });
     }
   }
 };
@@ -125,7 +146,7 @@ export default {
   padding-bottom: 30px;
 }
 .van-field {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .header {
   line-height: 0;
@@ -134,7 +155,7 @@ export default {
   flex: 0.5;
 }
 .sex-cell {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .sex-radio-group {
   width: 100%;

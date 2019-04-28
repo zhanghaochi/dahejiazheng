@@ -62,11 +62,12 @@
       </van-cell-group>
       <van-button type="warning" @click="submit">我要培训</van-button>
     </div>
-    <p class="myad">"安阳悦享工作室"提供技术支持</p>
+    <!-- <p class="myad">"安阳悦享工作室"提供技术支持</p> -->
   </div>
 </template>
 
 <script>
+import { sendpeixun } from "@/api/send";
 export default {
   data() {
     return {
@@ -96,7 +97,27 @@ export default {
             // on close
           });
       } else {
-        console.log(this.mydata);
+        sendpeixun(this.mydata)
+          .then(response => {
+            if (response.data.code == 200) {
+              this.$dialog
+                .alert({
+                  message: "提交成功"
+                })
+                .then(() => {
+                  this.$router.push("/");
+                });
+            } else {
+              this.$dialog.alert({
+                message: "提交失败"
+              });
+            }
+          })
+          .catch(err => {
+            this.$dialog.alert({
+              message: err
+            });
+          });
       }
     }
   }
@@ -126,7 +147,7 @@ export default {
   padding-bottom: 30px;
 }
 .van-field {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .header {
   line-height: 0;
@@ -135,7 +156,7 @@ export default {
   flex: 0.5;
 }
 .sex-cell {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .sex-radio-group {
   width: 100%;

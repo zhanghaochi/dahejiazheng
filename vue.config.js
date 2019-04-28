@@ -19,5 +19,9 @@ module.exports = {
         ]
       }
     }
-  }
+  },
+
+  // devServer: {
+  //   proxy: 'http://47.92.229.205/tp5/public',
+  // }
 };

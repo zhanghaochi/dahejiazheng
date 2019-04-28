@@ -39,6 +39,18 @@ export default new Router({
       path: '/field',
       name: 'field',
       component: () => import('@/views/field')
+    },
+    {
+      path: '/detail',
+      // path: '/detail',
+      name: 'detail',
+      component: () => import('@/views/detail')
+    },    
+    {
+      path: '/orderlist',
+      // path: '/orderlist',
+      name: 'orderlist',
+      component: () => import('@/views/orderlist')
     }
   ]
 })
