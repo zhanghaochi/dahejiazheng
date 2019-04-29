@@ -1,0 +1,21 @@
+@import './variables.scss';
+@import './mixin.scss';
+@import './element.scss';
+@import './sidebar.scss';
+// @import './btn.scss';
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+body{
+  height: 100%;
+  margin: 0;
+}
+#app{
+  height: 100%;
+}
+#nprogress .bar {
+  background: #07c160 !important; 
+  height: 3px !important;
+}

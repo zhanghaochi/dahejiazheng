@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import {
-    Button, Row, Col ,Cell, CellGroup,Field,Picker,Popup,RadioGroup,Radio,Dialog,List,Panel
+    Button, Row, Col ,Cell, CellGroup,Field,Picker,Popup,RadioGroup,Radio,Dialog,List,Panel,Icon
 } from 'vant';
 
 Vue.use(Row)
@@ -16,6 +16,7 @@ Vue.use(Radio)
 Vue.use(Dialog)
 Vue.use(List)
 Vue.use(Panel)
+Vue.use(Icon)
 // Vue.use(Loading.directive);
 
 // Vue.prototype.$loading = Loading.service;

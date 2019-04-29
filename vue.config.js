@@ -21,7 +21,7 @@ module.exports = {
     }
   },
 
-  // devServer: {
-  //   proxy: 'https://www.jiejingbaifenbai.top/tp5/public',
-  // }
+  devServer: {
+    proxy: 'https://www.jiejingbaifenbai.top/tp5/public',
+  }
 };

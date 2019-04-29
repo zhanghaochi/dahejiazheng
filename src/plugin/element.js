@@ -3,12 +3,12 @@ import {
   // Pagination,
   // Dialog,
   // Autocomplete,
-  // Dropdown,
-  // DropdownMenu,
-  // DropdownItem,
-  // Menu,
-  // Submenu,
-  // MenuItem,
+  Dropdown,
+  DropdownMenu,
+  DropdownItem,
+  Menu,
+  Submenu,
+  MenuItem,
   // MenuItemGroup,
   Input,
   // InputNumber,
@@ -66,18 +66,19 @@ import {
   Loading,
   MessageBox,
   Message,
-  Notification
+  Notification,
+  Scrollbar
 } from 'element-ui';
 
 // Vue.use(Pagination);
 // Vue.use(Dialog);
 // Vue.use(Autocomplete);
-// Vue.use(Dropdown);
-// Vue.use(DropdownMenu);
-// Vue.use(DropdownItem);
-// Vue.use(Menu);
-// Vue.use(Submenu);
-// Vue.use(MenuItem);
+Vue.use(Dropdown);
+Vue.use(DropdownMenu);
+Vue.use(DropdownItem);
+Vue.use(Menu);
+Vue.use(Submenu);
+Vue.use(MenuItem);
 // Vue.use(MenuItemGroup);
 Vue.use(Input);
 // Vue.use(InputNumber);
@@ -132,6 +133,8 @@ Vue.use(Header);
 Vue.use(Aside);
 Vue.use(Main);
 Vue.use(Footer);
+Vue.use(Scrollbar);
+
 
 Vue.use(Loading.directive);
 
