@@ -11,11 +11,7 @@ export const constantRouterMap = [
     name: 'index',
     component: () => import('@/views/index')
   },
-  {
-    path: '/layout',
-    name: 'layout',
-    component: layout,
-  },
+
   {
     path: '/test',
     name: 'test',

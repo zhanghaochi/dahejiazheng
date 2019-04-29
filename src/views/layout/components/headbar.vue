@@ -5,11 +5,11 @@
       <span class="wenhou">{{name}}</span>
       <el-dropdown class="avatar-container right-menu-item" trigger="click"> 
         <div class="avatar-wrapper">
-          <img src="@/assets/touxiang.png" class="user-avatar">
+          <img src="@/assets/touxiang.png"  class="user-avatar">
           <i class="el-icon-caret-bottom"/>
         </div>
         <el-dropdown-menu slot="dropdown">
-          <router-link to="/layout">
+          <router-link to="/orderlist">
             <el-dropdown-item>首页</el-dropdown-item>
           </router-link>
           <el-dropdown-item divided>
@@ -47,7 +47,8 @@ export default {
 </script>
 
 <style scoped>
-.navbar {
+
+/* .navbar {
   height: 50px;
   line-height: 50px;
   border-radius: 0px !important;
@@ -68,7 +69,7 @@ export default {
 }
 .wenhou{
   display: block;
-  font: 1em sans-serif;
+  font: 0.5em sans-serif;
   float: left;
   height: 50px;
   line-height: 50px;
@@ -100,5 +101,5 @@ export default {
   right: -20px;
   top: 25px;
   font-size: 12px;
-}
+} */
 </style>

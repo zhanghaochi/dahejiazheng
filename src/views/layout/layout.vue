@@ -1,9 +1,9 @@
 <template>
-  <el-container class="app-wrapper">
-    <el-header style="height:50px;padding:0;background-color: #30B08F;">
+  <div class="app-wrapper">
+    <div class="head-container">
       <headbar/>
-    </el-header>
-    <el-container>
+    </div>
+    <el-container class="main-container">
       <div class="side-container">
         <sidebar/>
       </div>
@@ -11,7 +11,7 @@
         <appmain/>
       </el-main>
     </el-container>
-  </el-container>
+  </div>
 </template>
 
 <script>
@@ -24,3 +24,21 @@ export default {
   }
 };
 </script>
+<style scoped>
+.app-wrapper {
+  height: 100%;
+}
+.head-container {
+  height: 50px;
+  padding: 0;
+  background-color: #30b08f;
+}
+.main-container{
+  height: 100%;
+}
+.side-container {
+  height: 100%;
+  overflow: hidden;
+  background-color: #1f2d3d;
+}
+</style>

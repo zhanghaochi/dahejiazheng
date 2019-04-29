@@ -1,5 +1,5 @@
 <template>
-  <>
+  <div>
     <van-list
       :immediate-check="false"
       v-model="loading"
@@ -18,7 +18,7 @@
       />
       <!-- <van-cell v-for="item in listdata" :key="item" :title="item"/> -->
     </van-list>
-  </>
+  </div>
 </template>
 
 <script>
