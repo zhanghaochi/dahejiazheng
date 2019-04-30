@@ -1,11 +1,11 @@
 <template>
   <el-container class="app-wrapper">
-    <el-header style="height:50px;padding:0;background-color: #30B08F;">
-      <headbar/>
-    </el-header>
-    <el-container>
-      <div class="side-container">
-        <sidebar/>
+    <div class="side-container">
+      <sidebar/>
+    </div>
+    <el-container class="main-container" direction="vertical">
+      <div class="head-container">
+        <headbar/>
       </div>
       <el-main style="padding:0">
         <appmain/>
@@ -24,3 +24,14 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.head-container{
+  height: 50px;
+  padding:0;
+  background-color: #30B08F;
+}
+</style>
+
+
+

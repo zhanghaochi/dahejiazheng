@@ -11,7 +11,7 @@ router.beforeEach((to, from, next) => {
   NProgress.start()
   if (getToken()) {
     if (to.path === '/login') {
-      next('/layout')
+      next('/orderlist')
       NProgress.done()
     } else {
       if (store.getters.roles.length === 0) {
@@ -24,7 +24,7 @@ router.beforeEach((to, from, next) => {
         }).catch((err) => {
           store.dispatch('LoginOut').then(() => {
             Message.error(err || '身份验证失败，请重新登陆')
-            next({ path: '/' })
+            next({ path: '/orderlist' })
           })
         })
       } else {

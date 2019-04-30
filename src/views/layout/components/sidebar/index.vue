@@ -1,6 +1,6 @@
 <template>
   <el-scrollbar>
-    <el-menu  unique-opened background-color="#545c64" text-color="#fff" router >
+    <el-menu v-if="sidebar" unique-opened background-color="#545c64" text-color="#fff" router>
     <sideitem v-for="(router,k) in permission_routers" :key="k" :item="router"/>
       <!-- <el-submenu index="1">
         <template slot="title">

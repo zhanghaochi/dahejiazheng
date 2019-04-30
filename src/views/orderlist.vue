@@ -1,5 +1,5 @@
 <template>
-  <>
+  <div class="bbb">
     <van-list
       :immediate-check="false"
       v-model="loading"
@@ -18,12 +18,11 @@
       />
       <!-- <van-cell v-for="item in listdata" :key="item" :title="item"/> -->
     </van-list>
-  </>
+  </div>
 </template>
 
 <script>
 import { getlist } from "@/api/dingdan";
-import { constants } from "crypto";
 export default {
   data() {
     return {

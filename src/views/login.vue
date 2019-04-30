@@ -52,7 +52,7 @@ export default {
             .dispatch("LoginByUsername", this.loginForm)
             .then(response => {
               console.log(response);
-              this.$router.push("/layout");
+              this.$router.push("/orderlist");
               this.loading = false;
             })
             .catch(err => {
