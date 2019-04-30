@@ -19,3 +19,8 @@ body{
   background: #07c160 !important; 
   height: 3px !important;
 }
+
+.list-container,.van-list,.van-cell{
+  box-sizing: border-box;
+  overflow: hidden;
+}

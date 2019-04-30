@@ -1,5 +1,5 @@
 <template>
-  <div v-if="item.children">
+  <div v-if="item.children" class="item-container">
     <el-menu-item v-if="haschildren(item)" :index="item.path">
       <span slot="title">{{item.children[0].meta.title}}</span>
     </el-menu-item>
@@ -32,15 +32,9 @@ export default {
         return false;
       }
     }
-  },
+  }
 };
 </script>
 
 <style scoped>
-.svg-icon {
-  margin-right: 10px;
-  margin-bottom: -4px;
-  width: 1.5em !important;
-  height: 1.5em !important;
-}
 </style>

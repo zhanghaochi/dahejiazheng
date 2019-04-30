@@ -16,7 +16,7 @@
         height: 100%;
         border: none;
         &:not(.el-menu--collapse) {
-          width: 100px;
+          width: $sideBarWidth;
         }
       }
     }

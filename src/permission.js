@@ -7,6 +7,8 @@ import { getToken } from '@/utils/auth'
 
 NProgress.configure({ showSpinner: false })
 
+const myrouter=['login','index','join','job','peixun','field','detail','jobdetail','joindetail','peixundetail']
+
 router.beforeEach((to, from, next) => {
   NProgress.start()
   if (getToken()) {
@@ -34,7 +36,7 @@ router.beforeEach((to, from, next) => {
     }
   } else {
     //没有token
-    if (to.path === '/login') {
+    if (myrouter.indexOf(to.name)!==-1) {
       next()
     } else {
       next('/login')

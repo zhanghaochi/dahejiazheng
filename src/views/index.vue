@@ -20,6 +20,10 @@
         <van-button size="large" type="primary" to="/join">我要加盟</van-button>
       </van-col>
     </van-row>
+    <van-row>
+      <p class="myad">联系电话：400-158-1981</p>
+      <p class="myad">公司地址：安阳市北关区解放路大道180号</p>
+    </van-row>
   </div>
 </template>
 
@@ -38,5 +42,10 @@ export default {};
 }
 .titlebar {
   font-size: 0;
+  margin-bottom: 20px;
+}
+.myad{
+  font-size: 0.5em;
+  font-weight: bold;
 }
 </style>

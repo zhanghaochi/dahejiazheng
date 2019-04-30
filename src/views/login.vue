@@ -51,7 +51,6 @@ export default {
           this.$store
             .dispatch("LoginByUsername", this.loginForm)
             .then(response => {
-              console.log(response);
               this.$router.push("/orderlist");
               this.loading = false;
             })

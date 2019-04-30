@@ -46,6 +46,21 @@ export const constantRouterMap = [
     name: 'detail',
     component: () => import('@/views/detail')
   },
+  {
+    path: '/jobdetail',
+    name: 'jobdetail',
+    component: () => import('@/views/jobdetail')
+  },
+  {
+    path: '/joindetail',
+    name: 'joindetail',
+    component: () => import('@/views/joindetail')
+  },
+  {
+    path: '/peixundetail',
+    name: 'peixundetail',
+    component: () => import('@/views/peixundetail')
+  },
   // {
   //   path: '/orderlist',
   //   name: 'orderlist',

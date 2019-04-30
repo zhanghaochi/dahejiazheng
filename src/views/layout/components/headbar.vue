@@ -5,7 +5,7 @@
       <span class="wenhou">{{name}}</span>
       <el-dropdown class="avatar-container right-menu-item" trigger="click"> 
         <div class="avatar-wrapper">
-          <img src="@/assets/touxiang.png"  class="user-avatar">
+          <img src="@/assets/touxiang.png" class="user-avatar">
           <i class="el-icon-caret-bottom"/>
         </div>
         <el-dropdown-menu slot="dropdown">
@@ -28,7 +28,7 @@ import hamburger from "@/components/hamburger"
 export default {
   name: "headbar",
   components: {
-    hamburger,
+    hamburger
   },
   computed: {
     ...mapGetters(["sidebar", 'name'])
@@ -47,8 +47,7 @@ export default {
 </script>
 
 <style scoped>
-
-/* .navbar {
+.navbar {
   height: 50px;
   line-height: 50px;
   border-radius: 0px !important;
@@ -101,5 +100,5 @@ export default {
   right: -20px;
   top: 25px;
   font-size: 12px;
-} */
+}
 </style>

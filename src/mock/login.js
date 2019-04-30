@@ -7,24 +7,24 @@ const userMap={
     avatar:'',
     name:'管理员'
   },
-  caiwuke:{
-    roles:['caiwuke'],
-    token:'caiwuke',
+  likuifeng:{
+    roles:['likuifeng'],
+    token:'likuifeng',
     avatar:'',
-    name:'财务科'
+    name:'李魁峰'
   },
-  jingjike:{
-    roles:['jingjike'],
-    token:'jingjike',
-    avatar:'',
-    name:'经济科'
-  },
-  yuanban:{
-    roles:['yuanban'],
-    token:'yuanban',
-    avatar:'',
-    name:'院办'
-  }
+//   jingjike:{
+//     roles:['jingjike'],
+//     token:'jingjike',
+//     avatar:'',
+//     name:'经济科'
+//   },
+//   yuanban:{
+//     roles:['yuanban'],
+//     token:'yuanban',
+//     avatar:'',
+//     name:'院办'
+//   }
 }
 
 export default {

@@ -1,5 +1,5 @@
 <template>
-  <div class="bbb">
+  <div class="list-container">
     <van-list
       :immediate-check="false"
       v-model="loading"

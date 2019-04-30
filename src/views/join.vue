@@ -52,11 +52,11 @@
             <van-radio checked-color="#07c160" name="家居环保">家居环保</van-radio>
           </van-cell>
         </van-radio-group>
-        <van-dialog v-model="show" title="加盟政策" confirmButtonText="我已阅读" @confirm="handler">
+        <!-- <van-dialog v-model="show" title="加盟政策" confirmButtonText="我已阅读" @confirm="handler">
           <p>暂无</p>
-        </van-dialog>
+        </van-dialog>-->
       </van-cell-group>
-      <van-button type="warning" @click="submit">我要加盟</van-button>
+      <van-button type="warning" @click.once="submit">我要加盟</van-button>
     </div>
     <!-- <p class="myad">"安阳悦享工作室"提供技术支持</p> -->
   </div>
@@ -93,13 +93,9 @@ export default {
             // on close
           });
       } else {
-        this.show = true;
-      }
-    },
-    handler() {
-      sendjoin(this.mydata)
-        .then(response => {
-          if (response.data.code == 200) {
+        sendjoin(this.mydata)
+          .then(response => {
+            if (response.data.code == 200) {
               this.$dialog
                 .alert({
                   message: "提交成功"
@@ -107,17 +103,18 @@ export default {
                 .then(() => {
                   this.$router.push("/");
                 });
-          } else {
+            } else {
+              this.$dialog.alert({
+                message: "提交失败"
+              });
+            }
+          })
+          .catch(err => {
             this.$dialog.alert({
-              message: "提交失败"
+              message: err
             });
-          }
-        })
-        .catch(err => {
-          this.$dialog.alert({
-            message: err
           });
-        });
+      }
     }
   }
 };

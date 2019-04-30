@@ -2,7 +2,7 @@ import axios from 'axios'
 import { Message } from 'element-ui'
 
 const service = axios.create({
-  // baseURL:'https://www.jiejingbaifenbai.top/tp5/public',
+  baseURL:'https://www.jiejingbaifenbai.top/tp5/public',
   timeout: 5000 // request timeout
 })
 

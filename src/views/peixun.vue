@@ -60,7 +60,7 @@
           </van-cell>
         </van-radio-group>
       </van-cell-group>
-      <van-button type="warning" @click="submit">我要培训</van-button>
+      <van-button type="warning" @click.once="submit">我要培训</van-button>
     </div>
     <!-- <p class="myad">"安阳悦享工作室"提供技术支持</p> -->
   </div>

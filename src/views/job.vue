@@ -34,8 +34,8 @@
         />
         <van-cell title="性别:" size="large" required class="sex-cell" title-class="sexclass">
           <van-radio-group v-model="mydata.sex" class="sex-radio-group">
-            <van-radio class="sex-radio" checked-color="#07c160" name="男">男</van-radio>
-            <van-radio class="sex-radio" checked-color="#07c160" name="女">女</van-radio>
+            <van-radio class="sex-radio" checked-color="#07c160" name="1">男</van-radio>
+            <van-radio class="sex-radio" checked-color="#07c160" name="0">女</van-radio>
           </van-radio-group>
         </van-cell>
         <van-cell title="应聘类型:" size="large" required title-class="kindclass"></van-cell>
@@ -60,7 +60,7 @@
           </van-cell>
         </van-radio-group>
       </van-cell-group>
-      <van-button type="warning" @click="submit">我要应聘</van-button>
+      <van-button type="warning" @click.once="submit">我要应聘</van-button>
     </div>
     <!-- <p class="myad">"安阳悦享工作室"提供技术支持</p> -->
   </div>

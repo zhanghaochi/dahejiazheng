@@ -47,7 +47,6 @@ export default {
       // console.log(this.$route.query.id);
       getdetail(this.$route.query.id)
         .then(response => {
-          console.log(response.data.data);
           this.detaildata = response.data.data;
         })
         .catch(err => {
